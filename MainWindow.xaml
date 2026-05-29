@@ -4,9 +4,41 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CybersecurityChatbot"
+        xmlns:models="clr-namespace:CybersecurityChatbot.Models"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="600" Width="900">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,8">
+            <TextBlock Text="User:" VerticalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock x:Name="UserNameDisplay" Margin="8,0,16,0" VerticalAlignment="Center"/>
+            <TextBlock Text="Known topics:" VerticalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock x:Name="KnownTopicsDisplay" Margin="8,0,0,0" VerticalAlignment="Center"/>
+            <Button x:Name="MicButton" Content="🎤 ON" Click="MicButton_Click" Margin="16,0,0,0"/>
+            <Button x:Name="ClearChatButton" Content="Clear" Click="ClearChatButton_Click" Margin="8,0,0,0"/>
+        </StackPanel>
+
+        <ScrollViewer x:Name="ChatScrollViewer" Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <ItemsControl x:Name="MessagesItemsControl">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="{x:Type models:ChatMessage}">
+                        <TextBlock Text="{Binding Text}" TextWrapping="Wrap" Margin="0,0,0,10"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,8,0,0">
+            <TextBox x:Name="UserInputTextBox" Width="700" Height="30" KeyDown="UserInputTextBox_KeyDown"/>
+            <Button Content="Send" Click="SendButton_Click" Margin="8,0,0,0" Width="100"/>
+        </StackPanel>
+
+        <TextBlock x:Name="AsciiArtDisplay" Grid.Row="3" Margin="0,10,0,0" TextWrapping="Wrap"/>
     </Grid>
 </Window>

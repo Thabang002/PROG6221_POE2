@@ -1,0 +1,15 @@
+/home/tbang02/Desktop/CybersecurityChatbot/obj/Debug/net10.0/CybersecurityChatbot.GeneratedMSBuildEditorConfig.editorconfig
+/home/tbang02/Desktop/CybersecurityChatbot/obj/Debug/net10.0/CybersecurityChatbot.AssemblyInfoInputs.cache
+/home/tbang02/Desktop/CybersecurityChatbot/obj/Debug/net10.0/CybersecurityChatbot.AssemblyInfo.cs
+/home/tbang02/Desktop/CybersecurityChatbot/obj/Debug/net10.0/CybersecurityChatbot.csproj.CoreCompileInputs.cache
+/home/tbang02/Desktop/CybersecurityChatbot/obj/Debug/net10.0/CybersecurityChatbot.sourcelink.json
+/home/tbang02/Desktop/CybersecurityChatbot/bin/Debug/net10.0/CybersecurityChatbot
+/home/tbang02/Desktop/CybersecurityChatbot/bin/Debug/net10.0/CybersecurityChatbot.deps.json
+/home/tbang02/Desktop/CybersecurityChatbot/bin/Debug/net10.0/CybersecurityChatbot.runtimeconfig.json
+/home/tbang02/Desktop/CybersecurityChatbot/bin/Debug/net10.0/CybersecurityChatbot.dll
+/home/tbang02/Desktop/CybersecurityChatbot/bin/Debug/net10.0/CybersecurityChatbot.pdb
+/home/tbang02/Desktop/CybersecurityChatbot/obj/Debug/net10.0/CybersecurityChatbot.dll
+/home/tbang02/Desktop/CybersecurityChatbot/obj/Debug/net10.0/refint/CybersecurityChatbot.dll
+/home/tbang02/Desktop/CybersecurityChatbot/obj/Debug/net10.0/CybersecurityChatbot.pdb
+/home/tbang02/Desktop/CybersecurityChatbot/obj/Debug/net10.0/CybersecurityChatbot.genruntimeconfig.cache
+/home/tbang02/Desktop/CybersecurityChatbot/obj/Debug/net10.0/ref/CybersecurityChatbot.dll

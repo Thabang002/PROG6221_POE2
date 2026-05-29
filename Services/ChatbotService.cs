@@ -191,7 +191,7 @@ namespace CybersecurityChatbot.Services
         {
             var inputLower = userInput.ToLower();
             var random = new Random();
-            
+
             // Check for custom response from delegate
             if (OnCustomResponse != null)
             {
@@ -206,7 +206,7 @@ namespace CybersecurityChatbot.Services
                     }
                 }
             }
-            
+
             // Greeting handling
             if (inputLower.Contains("hello") || inputLower.Contains("hi ") || inputLower.Contains("hey ") || inputLower == "hi")
             {
@@ -215,6 +215,44 @@ namespace CybersecurityChatbot.Services
                     greeting = $"Hi {_userProfile.Name}! {greeting}";
                 return greeting;
             }
+
+            // Default fallback response
+            return GetFallbackResponse(keyword, random);
         }
+
+        private string GetFallbackResponse(string keyword, Random random)
+        {
+            return _fallbackResponses[random.Next(_fallbackResponses.Count)];
         }
+
+        private void ExtractUserInfo(string userInput)
+        {
+            if (string.IsNullOrWhiteSpace(userInput))
+                return;
+
+            var lower = userInput.ToLower();
+            if (lower.Contains("my name is "))
+            {
+                var start = lower.IndexOf("my name is ", StringComparison.Ordinal) + "my name is ".Length;
+                var namePart = userInput.Substring(start).Trim();
+                if (!string.IsNullOrWhiteSpace(namePart))
+                {
+                    var firstWord = namePart.Split(' ')[0];
+                    _userProfile.Name = char.ToUpper(firstWord[0]) + firstWord.Substring(1);
+                }
+            }
         }
+
+        public void ClearMemory()
+        {
+            _userProfile = new UserProfile();
+            _responseCache.Clear();
+            _conversationManager.ResetFollowUp();
+        }
+
+        public UserProfile GetUserProfile()
+        {
+            return _userProfile;
+        }
+    }
+}
