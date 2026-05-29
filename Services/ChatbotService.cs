@@ -215,3 +215,6 @@ namespace CybersecurityChatbot.Services
                     greeting = $"Hi {_userProfile.Name}! {greeting}";
                 return greeting;
             }
+        }
+        }
+        }
